@@ -1,0 +1,27 @@
+﻿<Window x:Class="RevitAPILab_6_1_CreateDuct.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RevitAPILab_6_1_CreateDuct"
+             mc:Ignorable="d" 
+             Height="160" MinHeight="300"  Width="300"
+             Title="Созданиие воздуховода">
+    <StackPanel>
+        <Label Content="Выбрать тип воздуховода из списка"/>
+        <ComboBox ItemsSource="{Binding DuctTypes}"
+                  SelectedValue="{Binding SelectedDuctType}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Выбрать уровень из списка"/>
+        <ComboBox ItemsSource="{Binding Levels}"
+                  SelectedValue="{Binding SelectedLevel}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Смещение (отметка посередине)"/>
+        <TextBox Text="{Binding MoveCenter}" Margin="5"/>
+        <Button Content="Применить"
+                Command="{Binding SaveCommand}"
+                Margin="5"/>
+    </StackPanel>
+</Window>
